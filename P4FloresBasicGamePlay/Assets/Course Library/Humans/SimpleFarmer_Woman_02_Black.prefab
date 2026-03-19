@@ -364,9 +364,10 @@ GameObject:
   - component: {fileID: 4591710981752626107}
   - component: {fileID: 3400087447265888204}
   - component: {fileID: 2595430195567753466}
+  - component: {fileID: 7662700802860131382}
   m_Layer: 0
   m_Name: SimpleFarmer_Woman_02_Black
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -430,7 +431,7 @@ MonoBehaviour:
   speed: 10
   xRange: 10
   xRange2: -20
-  projectilePrefab: {fileID: 126446, guid: c2f4b43f266dc11439efef86830dafb4, type: 3}
+  projectilePrefab: {fileID: 8196523308927563316, guid: 96a238095bdcd9d478836bf9e6dbd733, type: 3}
   zMin: -1.5
   zMax: 15.5
   verticalInput: 0
@@ -450,7 +451,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -483,6 +484,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7662700802860131382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3993ff04ea5085642850f5023c5ce21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &103886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,7 +1320,7 @@ Transform:
   m_GameObject: {fileID: 237262928762823534}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.013, y: 1.562, z: 1.149}
+  m_LocalPosition: {x: -0.2, y: 0, z: 1.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

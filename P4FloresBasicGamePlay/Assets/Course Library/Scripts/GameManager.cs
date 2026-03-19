@@ -1,16 +1,36 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
-public class DestroyOutOfBounds : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    private int score = 0;
+    private int lives = 3;
     private float topBound = 50;
     private float lowerBound = -10.0f;
     private float sideBound = 30;
     private GameManager gameManager;
+
+    public void AddLives(int value)
+    {
+        lives += value;
+
+        if (lives <= 0)
+        {
+            Debug.Log("Game Over");
+            lives = 0;
+        }
+        Debug.Log("Lives = " + lives);
+    }
+
+    public void AddScore(int value)
+    {
+        score += value; 
+        Debug.Log("Score = " + score);
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameManager =
-            GameObject.Find("GameManager").GetComponent<GameManager>();
+        
     }
 
     // Update is called once per frame
@@ -22,29 +42,17 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
         else if (transform.position.z < lowerBound)
         {
+            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
         else if (transform.position.x > sideBound)
         {
             gameManager.AddLives(-1);
-
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Animal"))
-        {
-            gameManager.AddScore(5);
             Destroy(gameObject);
-            Destroy(other.gameObject);
         }
-
         else if (transform.position.x < -sideBound)
         {
-            Debug.Log("Game Over!");
-            Destroy(gameObject);
+            gameManager.AddLives(-1); Destroy(gameObject);
         }
     }
-
 }
-
